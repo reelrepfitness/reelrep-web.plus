@@ -19,8 +19,8 @@ const MACROS = [
     subtitle: "כ-200 קלוריות למנה",
     examples: "לדוגמה: 3 חתיכות חזה עוף או גביע קוטג׳",
     icon: "/images/protein.png",
-    gradientFrom: "#ef4444",
-    gradientTo: "#dc2626",
+    gradientFrom: "#3b82f6",
+    gradientTo: "#2563eb",
   },
   {
     title: "מנת פחמימה",
