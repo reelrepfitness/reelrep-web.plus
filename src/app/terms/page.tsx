@@ -23,7 +23,7 @@ export default function TermsPage() {
 
                     <h2 className="text-xl font-bold text-gray-900 mt-8">מנויים ותשלומים</h2>
                     <p>
-                        מנוי שנתי עולה 180₪ ומתחדש אוטומטית. ניתן לבטל את המנוי בכל עת דרך הגדרות החשבון.
+                        מנוי שנתי עולה 360₪ ומתחדש אוטומטית. ניתן לבטל את המנוי בכל עת דרך הגדרות החשבון.
                     </p>
 
                     <h2 className="text-xl font-bold text-gray-900 mt-8">הגבלת אחריות</h2>
@@ -33,7 +33,7 @@ export default function TermsPage() {
 
                     <h2 className="text-xl font-bold text-gray-900 mt-8">יצירת קשר</h2>
                     <p>
-                        לכל שאלה בנוגע לתנאי השימוש, אנא צרו קשר: support@reelrep.plus
+                        לכל שאלה בנוגע לתנאי השימוש, אנא צרו קשר: ivan@reelrep.com
                     </p>
                 </div>
 

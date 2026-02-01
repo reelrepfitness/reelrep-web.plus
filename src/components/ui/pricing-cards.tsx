@@ -44,7 +44,7 @@ export function PricingCards() {
                             <div className="mt-6 space-y-4">
                                 <div className="flex items-end gap-1">
                                     <span className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                                        ₪30
+                                        ₪50
                                     </span>
                                     <span className="text-gray-500 mb-1">/לחודש</span>
                                 </div>
@@ -78,16 +78,16 @@ export function PricingCards() {
                             </Badge>
                             <div className="space-y-2">
                                 <h3 className="text-xl font-bold text-white">שנתי</h3>
-                                <p className="text-gray-400 text-sm">חסכו 50%!</p>
+                                <p className="text-gray-400 text-sm">חסכו 40%!</p>
                             </div>
                             <div className="mt-6 space-y-4">
                                 <div className="flex items-end gap-1">
                                     <span className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                                        ₪15
+                                        ₪30
                                     </span>
                                     <span className="text-gray-400 mb-1">/לחודש</span>
                                 </div>
-                                <p className="text-gray-400 text-sm">₪180 לשנה</p>
+                                <p className="text-gray-400 text-sm">₪360 לשנה</p>
                                 <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white" asChild>
                                     <a href="#signup">התחילו עכשיו</a>
                                 </Button>
