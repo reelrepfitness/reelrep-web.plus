@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Rubik } from "next/font/google";
 import "./globals.css";
+
+const rubik = Rubik({
+  variable: "--font-rubik",
+  subsets: ["latin", "hebrew"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Reel Rep Plus | אפליקציית תזונה חכמה לספירת קלוריות",
@@ -21,7 +28,7 @@ export const metadata: Metadata = {
     description: "אפליקציית תזונה חכמה שנותנת לכם שליטה מלאה. בלי לשקול, בלי לנחש - רק תוצאות.",
     images: [
       {
-        url: "/images/social-share-new.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Reel Rep Plus - אפליקציית תזונה חכמה",
@@ -32,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reel Rep Plus | אפליקציית תזונה חכמה",
     description: "אפליקציית תזונה חכמה שנותנת לכם שליטה מלאה. בלי לשקול, בלי לנחש - רק תוצאות.",
-    images: ["/images/social-share-new.png"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
@@ -46,8 +53,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/images/icon.png",
+    apple: "/images/icon.png",
   },
 };
 
@@ -98,7 +105,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="font-sans antialiased"
+        className={`${rubik.variable} font-sans antialiased`}
       >
         {children}
       </body>

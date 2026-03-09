@@ -102,15 +102,15 @@ function HeroSection() {
           alt="Reel Rep Plus"
           width={1200}
           height={300}
-          className="w-[280px] md:w-full md:max-w-4xl h-auto mb-6 md:mt-[25vh]"
+          className="w-[280px] md:w-full md:max-w-4xl h-auto mb-2 md:mt-[25vh]"
         />
-        <p className="text-gray-600 text-lg md:text-2xl mb-12" dir="rtl">
-          זו לא דיאטה כי{" "}
-          <Highlight className="text-white font-bold">
-            השליטה היא בידיים שלך
-          </Highlight>
-        </p>
-
+        <Image
+          src="/images/byreelrep-black.png"
+          alt="by Reel Rep"
+          width={200}
+          height={40}
+          className="h-auto w-[100px] md:w-[150px] mb-6"
+        />
         {/* Phone mockup with scroll animation */}
         <ScrollPinContainer containerClassName="mt-8 relative z-30">
           <div className="relative">
@@ -118,11 +118,13 @@ function HeroSection() {
             <div className="relative w-[280px] h-[560px] md:w-[320px] md:h-[640px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl shadow-black/50">
               {/* Screen with actual app screenshot */}
               <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                <Image
-                  src="/images/app-screenshot-6.png"
-                  alt="Reel Rep Plus App"
-                  fill
-                  className="object-cover"
+                <video
+                  src="/images/hero-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover object-bottom scale-105"
                 />
               </div>
             </div>
@@ -240,12 +242,14 @@ function MacroSection() {
 
 // App Screenshots Section
 const APP_SCREENSHOTS = [
-  { src: "/images/screenshots/home-screen.png", alt: "מסך הבית", icon: "/images/dashbaord-icon.png", description: "ממשק ברור וקל להבנה." },
-  { src: "/images/screenshots/barcode-screen.png", alt: "סריקת ברקוד", icon: "/images/barcode-icon.png", description: "סרקו מוצרים בקלות" },
-  { src: "/images/screenshots/guides-screen.png", alt: "מדריכים", icon: "/images/guides-icon.png", description: "טיפים ומדריכים כדי שלכם לא יהיה ספק." },
-  { src: "/images/screenshots/recipe-screen.png", alt: "מתכונים", icon: "/images/recepies-icon.png", description: "מתכונים שמתעדכנים מדי שבוע" },
-  { src: "/images/screenshots/food-bank-screen.png", alt: "מאגר מזון", icon: "/images/food-bank-icon.png", description: "מאגר מזון עצום." },
-  { src: "/images/screenshots/ai-screen.png", alt: "ניתוח AI", icon: "/images/ai-scan-icon.png", description: "ניתוח צלחת באמצעות בינה מלאכותית" },
+  { src: "/images/screenshots/home-screen.png", alt: "מסך הבית", description: "ממשק ברור וקל להבנה." },
+  { src: "/images/screenshots/barcode-screen.png", alt: "סריקת ברקוד", description: "סרקו מוצרים בקלות" },
+  { src: "/images/screenshots/guides-screen.png", alt: "מדריכים", description: "טיפים ומדריכים כדי שלכם לא יהיה ספק." },
+  { src: "/images/screenshots/recipe-screen.png", alt: "מתכונים", description: "מתכונים שמתעדכנים מדי שבוע" },
+  { src: "/images/screenshots/food-bank-screen.png", alt: "מאגר מזון", description: "מאגר מזון עצום." },
+  { src: "/images/screenshots/ai-screen.png", alt: "ניתוח AI", description: "ניתוח צלחת באמצעות בינה מלאכותית" },
+  { src: "/images/screenshots/indulgences.png", alt: "מסעדות ואלכוהול", description: "כן, מסעדות וגם אלכוהול כבר מחושבים" },
+  { src: "/images/screenshots/summary-screen.png", alt: "סיכום יומי", description: "אנחנו נסכם לכם כל יום.\nככה נהפוך את זה לאורח חיים" },
 ];
 
 function AppScreenshotsSection() {

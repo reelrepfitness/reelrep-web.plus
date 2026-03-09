@@ -247,7 +247,7 @@ function StepBirthday({ form, setForm }: { form: FormData; setForm: React.Dispat
             <CalendarPicker
                 mode="single"
                 selected={selected}
-                onSelect={(date) => {
+                onSelect={(date: Date | undefined) => {
                     if (date) {
                         const yyyy = date.getFullYear();
                         const mm = String(date.getMonth() + 1).padStart(2, "0");
