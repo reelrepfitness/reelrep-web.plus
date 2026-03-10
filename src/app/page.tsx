@@ -12,6 +12,8 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import LeadForm from "@/components/ui/lead-form";
+import { PromoBanner } from "@/components/ui/promo-banner";
 
 const MACROS = [
   {
@@ -353,19 +355,41 @@ function Footer() {
   );
 }
 
+// Lead Form Section
+function LeadFormSection() {
+  return (
+    <section id="signup" className="bg-gray-900 py-20 px-6" dir="rtl">
+      <div className="max-w-2xl mx-auto text-center mb-12">
+        <div className="w-16 h-1 bg-teal-500 rounded-full mx-auto mb-4" />
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          הרשמה <span className="text-teal-400">מוקדמת</span>
+        </h2>
+        <p className="text-gray-400 text-lg md:text-xl">
+          הרשמו עכשיו ותקבלו <span className="text-teal-400 font-bold">50% הנחה</span> לשנה הראשונה
+        </p>
+      </div>
+      <LeadForm />
+    </section>
+  );
+}
+
 // Main Page
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <AppDownloadSection />
-      <DoingItRightSection />
-      <MacroSection />
-      <AppScreenshotsSection />
-      <TestimonialsSection />
-      <FaqSection />
-      <PricingSection />
-      <Footer />
-    </main>
+    <>
+      <main className="min-h-screen">
+        <HeroSection />
+        <AppDownloadSection />
+        <DoingItRightSection />
+        <MacroSection />
+        <AppScreenshotsSection />
+        <TestimonialsSection />
+        <FaqSection />
+        <PricingSection />
+        <LeadFormSection />
+        <Footer />
+      </main>
+      <PromoBanner />
+    </>
   );
 }

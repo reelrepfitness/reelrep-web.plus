@@ -91,23 +91,26 @@ export const ScreenshotCarousel = React.forwardRef<HTMLDivElement, ScreenshotCar
                                             visibility: Math.abs(pos) > 1 ? 'hidden' : 'visible',
                                         }}
                                     >
-                                        {/* Icon and Description - Moves with card */}
-                                        {image.icon && (
-                                            <div className="flex flex-col items-center gap-2 mb-4" dir="rtl">
+                                        {/* Title and Description - Moves with card */}
+                                        <div className="flex flex-col items-center gap-1 mb-4" dir="rtl">
+                                            {image.icon && (
                                                 <Image
                                                     src={image.icon}
                                                     alt={image.alt}
                                                     width={80}
                                                     height={80}
-                                                    className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl"
+                                                    className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl mb-1"
                                                 />
-                                                {image.description && (
-                                                    <p className="text-gray-900 text-base md:text-xl font-bold max-w-xs text-center whitespace-nowrap drop-shadow-md">
-                                                        {image.description}
-                                                    </p>
-                                                )}
-                                            </div>
-                                        )}
+                                            )}
+                                            <p className="text-white text-base md:text-lg font-bold max-w-xs text-center drop-shadow-md">
+                                                {image.alt}
+                                            </p>
+                                            {image.description && (
+                                                <p className="text-gray-300 text-xs md:text-sm max-w-xs text-center drop-shadow-md">
+                                                    {image.description}
+                                                </p>
+                                            )}
+                                        </div>
 
                                         {/* Screenshot */}
                                         <div className="w-full h-96 md:h-[500px]">
