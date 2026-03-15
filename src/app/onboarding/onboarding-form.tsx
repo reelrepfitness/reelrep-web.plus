@@ -428,49 +428,76 @@ function StepGoal({ form, setForm }: { form: FormData; setForm: React.Dispatch<R
 
     return (
         <div className="space-y-5">
-            <div className="overflow-hidden relative">
-                <AnimatePresence mode="popLayout" initial={false}>
-                    <motion.div
-                        key={activeIdx}
-                        initial={{ x: -80, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: 80, opacity: 0 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={0.2}
-                        onDragEnd={(_, info) => {
-                            if (info.offset.x > 60) paginate(-1);
-                            else if (info.offset.x < -60) paginate(1);
-                        }}
-                    >
-                        <div
-                            className="w-full rounded-xl p-6 shadow-lg"
-                            style={{ background: GOALS[activeIdx].gradient }}
-                        >
-                            <div className="flex flex-col items-center py-4 gap-3">
-                                <Image src={GOALS[activeIdx].image} alt={GOALS[activeIdx].label} width={100} height={100} />
-                                <div className="text-2xl font-black text-gray-800">{GOALS[activeIdx].label}</div>
-                                <div className="text-sm text-gray-600">{GOALS[activeIdx].desc}</div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
-            </div>
-
-            {/* Dots indicator */}
-            <div className="flex justify-center gap-2">
-                {GOALS.map((g, i) => (
+            {/* Desktop: grid */}
+            <div className="hidden sm:grid sm:grid-cols-3 gap-3">
+                {GOALS.map((g) => (
                     <button
                         key={g.value}
                         type="button"
                         onClick={() => setForm((f) => ({ ...f, goal: g.value }))}
                         className={cn(
-                            "w-2.5 h-2.5 rounded-full transition-all duration-200",
-                            i === activeIdx ? "bg-[#1FA09B] scale-125" : "bg-gray-300"
+                            "rounded-xl p-4 shadow-lg transition-all duration-200 border-2",
+                            form.goal === g.value
+                                ? "border-[#1FA09B] scale-[1.03]"
+                                : "border-transparent opacity-70 hover:opacity-100"
                         )}
-                    />
+                        style={{ background: g.gradient }}
+                    >
+                        <div className="flex flex-col items-center py-2 gap-2">
+                            <Image src={g.image} alt={g.label} width={80} height={80} />
+                            <div className="text-lg font-black text-gray-800">{g.label}</div>
+                            <div className="text-xs text-gray-600">{g.desc}</div>
+                        </div>
+                    </button>
                 ))}
+            </div>
+
+            {/* Mobile: swipe carousel */}
+            <div className="sm:hidden">
+                <div className="overflow-hidden relative">
+                    <AnimatePresence mode="popLayout" initial={false}>
+                        <motion.div
+                            key={activeIdx}
+                            initial={{ x: -80, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 80, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(_, info) => {
+                                if (info.offset.x > 60) paginate(-1);
+                                else if (info.offset.x < -60) paginate(1);
+                            }}
+                        >
+                            <div
+                                className="w-full rounded-xl p-6 shadow-lg"
+                                style={{ background: GOALS[activeIdx].gradient }}
+                            >
+                                <div className="flex flex-col items-center py-4 gap-3">
+                                    <Image src={GOALS[activeIdx].image} alt={GOALS[activeIdx].label} width={100} height={100} />
+                                    <div className="text-2xl font-black text-gray-800">{GOALS[activeIdx].label}</div>
+                                    <div className="text-sm text-gray-600">{GOALS[activeIdx].desc}</div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-5">
+                    {GOALS.map((g, i) => (
+                        <button
+                            key={g.value}
+                            type="button"
+                            onClick={() => setForm((f) => ({ ...f, goal: g.value }))}
+                            className={cn(
+                                "w-2.5 h-2.5 rounded-full transition-all duration-200",
+                                i === activeIdx ? "bg-[#1FA09B] scale-125" : "bg-gray-300"
+                            )}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -489,49 +516,76 @@ function StepActivity({ form, setForm }: { form: FormData; setForm: React.Dispat
 
     return (
         <div className="space-y-5">
-            <div className="overflow-hidden relative">
-                <AnimatePresence mode="popLayout" initial={false}>
-                    <motion.div
-                        key={activeIdx}
-                        initial={{ x: -80, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: 80, opacity: 0 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={0.2}
-                        onDragEnd={(_, info) => {
-                            if (info.offset.x > 60) paginate(-1);
-                            else if (info.offset.x < -60) paginate(1);
-                        }}
-                    >
-                        <div
-                            className="w-full rounded-xl p-6 shadow-lg"
-                            style={{ background: ACTIVITIES[activeIdx].gradient }}
-                        >
-                            <div className="text-center py-4">
-                                <div className="text-xl font-black text-gray-800">{ACTIVITIES[activeIdx].title}</div>
-                                <div className="text-2xl font-black text-gray-700 mt-1">{ACTIVITIES[activeIdx].subtitle}</div>
-                                <div className="text-base text-gray-700 mt-1">{ACTIVITIES[activeIdx].desc}</div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
-            </div>
-
-            {/* Dots indicator */}
-            <div className="flex justify-center gap-2">
-                {ACTIVITIES.map((a, i) => (
+            {/* Desktop: grid */}
+            <div className="hidden sm:grid sm:grid-cols-2 gap-3">
+                {ACTIVITIES.map((a) => (
                     <button
                         key={a.value}
                         type="button"
                         onClick={() => setForm((f) => ({ ...f, activity: a.value }))}
                         className={cn(
-                            "w-2.5 h-2.5 rounded-full transition-all duration-200",
-                            i === activeIdx ? "bg-[#1FA09B] scale-125" : "bg-gray-300"
+                            "rounded-xl p-4 shadow-lg transition-all duration-200 border-2",
+                            form.activity === a.value
+                                ? "border-[#1FA09B] scale-[1.03]"
+                                : "border-transparent opacity-70 hover:opacity-100"
                         )}
-                    />
+                        style={{ background: a.gradient }}
+                    >
+                        <div className="text-center py-2">
+                            <div className="text-lg font-black text-gray-800">{a.title}</div>
+                            <div className="text-xl font-black text-gray-700 mt-1">{a.subtitle}</div>
+                            <div className="text-sm text-gray-700 mt-1">{a.desc}</div>
+                        </div>
+                    </button>
                 ))}
+            </div>
+
+            {/* Mobile: swipe carousel */}
+            <div className="sm:hidden">
+                <div className="overflow-hidden relative">
+                    <AnimatePresence mode="popLayout" initial={false}>
+                        <motion.div
+                            key={activeIdx}
+                            initial={{ x: -80, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 80, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(_, info) => {
+                                if (info.offset.x > 60) paginate(-1);
+                                else if (info.offset.x < -60) paginate(1);
+                            }}
+                        >
+                            <div
+                                className="w-full rounded-xl p-6 shadow-lg"
+                                style={{ background: ACTIVITIES[activeIdx].gradient }}
+                            >
+                                <div className="text-center py-4">
+                                    <div className="text-xl font-black text-gray-800">{ACTIVITIES[activeIdx].title}</div>
+                                    <div className="text-2xl font-black text-gray-700 mt-1">{ACTIVITIES[activeIdx].subtitle}</div>
+                                    <div className="text-base text-gray-700 mt-1">{ACTIVITIES[activeIdx].desc}</div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-5">
+                    {ACTIVITIES.map((a, i) => (
+                        <button
+                            key={a.value}
+                            type="button"
+                            onClick={() => setForm((f) => ({ ...f, activity: a.value }))}
+                            className={cn(
+                                "w-2.5 h-2.5 rounded-full transition-all duration-200",
+                                i === activeIdx ? "bg-[#1FA09B] scale-125" : "bg-gray-300"
+                            )}
+                        />
+                    ))}
+                </div>
             </div>
 
             <div className="space-y-3 pt-4 border-t border-gray-100">
@@ -694,9 +748,6 @@ export function OnboardingForm() {
         setLoading(true);
 
         try {
-            const birthdayDate = new Date(form.birthday);
-            const age = new Date().getFullYear() - birthdayDate.getFullYear();
-
             const res = await fetch("/api/onboarding", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -706,7 +757,6 @@ export function OnboardingForm() {
                     phone: form.phone.trim(),
                     password: form.password,
                     birthday: form.birthday,
-                    age,
                     gender: form.gender,
                     height: form.height,
                     weight: form.weight,

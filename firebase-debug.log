@@ -200,3 +200,47 @@ For CI servers and headless environments, generate a new token with firebase log
 [debug] [2026-03-10T11:31:15.310Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
 [debug] [2026-03-10T11:31:15.310Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
 [debug] [2026-03-10T11:31:15.737Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-03-15T12:52:54.806Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.810Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.810Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.810Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.810Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.811Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.811Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.811Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.812Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.813Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:54.814Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.814Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.814Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.814Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.814Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:54.815Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.815Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.815Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.815Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.815Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.815Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.816Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:54.812Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.812Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.812Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.813Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.813Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.813Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.814Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.814Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:54.815Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.816Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.816Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.816Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.816Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:54.820Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-15T12:52:54.820Z] > authorizing via signed-in user (ivan@reelrep.com)
+[debug] [2026-03-15T12:52:54.820Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.820Z] Checked if tokens are valid: false, expires at: 1769344979695
+[debug] [2026-03-15T12:52:54.820Z] > refreshing access token with scopes: []
+[debug] [2026-03-15T12:52:54.820Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-15T12:52:54.821Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-15T12:52:55.018Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-03-15T12:52:55.023Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
