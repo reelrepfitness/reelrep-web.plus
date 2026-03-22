@@ -429,24 +429,26 @@ function StepGoal({ form, setForm }: { form: FormData; setForm: React.Dispatch<R
     return (
         <div className="space-y-5">
             {/* Desktop: grid */}
-            <div className="hidden sm:grid sm:grid-cols-3 gap-3">
+            <div className="hidden sm:grid sm:grid-cols-1 gap-3">
                 {GOALS.map((g) => (
                     <button
                         key={g.value}
                         type="button"
                         onClick={() => setForm((f) => ({ ...f, goal: g.value }))}
                         className={cn(
-                            "rounded-xl p-4 shadow-lg transition-all duration-200 border-2",
+                            "rounded-xl p-4 shadow-lg transition-all duration-200 border-2 max-w-xs mx-auto w-full",
                             form.goal === g.value
                                 ? "border-[#1FA09B] scale-[1.03]"
-                                : "border-transparent opacity-70 hover:opacity-100"
+                                : "border-transparent opacity-60 hover:opacity-100"
                         )}
-                        style={{ background: g.gradient }}
+                        style={{ background: form.goal === g.value ? g.gradient : `linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)), ${g.gradient}` }}
                     >
-                        <div className="flex flex-col items-center py-2 gap-2">
-                            <Image src={g.image} alt={g.label} width={80} height={80} />
-                            <div className="text-lg font-black text-gray-800">{g.label}</div>
-                            <div className="text-xs text-gray-600">{g.desc}</div>
+                        <div className="flex items-center gap-4 py-2">
+                            <Image src={g.image} alt={g.label} width={70} height={70} className="shrink-0" />
+                            <div className="text-right">
+                                <div className="text-lg font-black text-gray-800">{g.label}</div>
+                                <div className="text-xs text-gray-600">{g.desc}</div>
+                            </div>
                         </div>
                     </button>
                 ))}
@@ -524,17 +526,17 @@ function StepActivity({ form, setForm }: { form: FormData; setForm: React.Dispat
                         type="button"
                         onClick={() => setForm((f) => ({ ...f, activity: a.value }))}
                         className={cn(
-                            "rounded-xl p-4 shadow-lg transition-all duration-200 border-2",
+                            "rounded-xl p-3 shadow-lg transition-all duration-200 border-2",
                             form.activity === a.value
                                 ? "border-[#1FA09B] scale-[1.03]"
                                 : "border-transparent opacity-70 hover:opacity-100"
                         )}
                         style={{ background: a.gradient }}
                     >
-                        <div className="text-center py-2">
-                            <div className="text-lg font-black text-gray-800">{a.title}</div>
-                            <div className="text-xl font-black text-gray-700 mt-1">{a.subtitle}</div>
-                            <div className="text-sm text-gray-700 mt-1">{a.desc}</div>
+                        <div className="text-center py-1">
+                            <div className="text-sm font-black text-gray-800">{a.title}</div>
+                            <div className="text-base font-black text-gray-700 mt-0.5">{a.subtitle}</div>
+                            <div className="text-xs text-gray-700 mt-0.5">{a.desc}</div>
                         </div>
                     </button>
                 ))}
@@ -667,6 +669,12 @@ function SuccessScreen() {
                     Google Play
                 </a>
             </div>
+            <a
+                href="/"
+                className="mt-4 inline-flex items-center justify-center text-[#1FA09B] font-medium hover:text-[#178A85] transition-colors"
+            >
+                חזור למסך הבית
+            </a>
         </motion.div>
     );
 }
@@ -790,7 +798,7 @@ export function OnboardingForm() {
     }
 
     return (
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-xl">
             {/* Logo & Subtitle — tap logo 5x to skip to next step */}
             <div className="text-center mb-6">
                 <button
