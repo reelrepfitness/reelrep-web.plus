@@ -8,13 +8,13 @@ export const metadata: Metadata = {
     openGraph: {
         title: "הרשמה | Reel Rep Plus",
         description: "טופס הרשמה ללקוחות חדשים של Reel Rep Plus",
-        images: [{ url: "/images/social-share-new.png" }],
+        images: [{ url: "/images/plus-social-share.png" }],
     },
     twitter: {
         card: "summary_large_image",
         title: "הרשמה | Reel Rep Plus",
         description: "טופס הרשמה ללקוחות חדשים של Reel Rep Plus",
-        images: ["/images/social-share-new.png"],
+        images: ["/images/plus-social-share.png"],
     },
 };
 

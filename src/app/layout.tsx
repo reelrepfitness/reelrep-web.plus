@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "אפליקציית תזונה חכמה שנותנת לכם שליטה מלאה. בלי לשקול, בלי לנחש - רק תוצאות.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/plus-social-share.png",
         width: 1200,
         height: 630,
         alt: "Reel Rep Plus - אפליקציית תזונה חכמה",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reel Rep Plus | אפליקציית תזונה חכמה",
     description: "אפליקציית תזונה חכמה שנותנת לכם שליטה מלאה. בלי לשקול, בלי לנחש - רק תוצאות.",
-    images: ["/images/og-image.png"],
+    images: ["/images/plus-social-share.png"],
   },
   robots: {
     index: true,
