@@ -192,19 +192,27 @@ h6 {
   --violet-200: #A7E0DE;
 }
 
-/* Aurora Animation */
+/* Aurora Animation — GPU-composited via transform, not background-position */
 @keyframes aurora {
   from {
-    background-position: 50% 50%, 50% 50%;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    background-position: 350% 50%, 350% 50%;
+    transform: translate3d(-25%, 0, 0);
   }
 }
 
 .animate-aurora {
-  animation: aurora 60s linear infinite;
+  animation: aurora 90s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora {
+    animation: none;
+  }
 }
 
 /* Meteor Animation */

@@ -16,7 +16,7 @@ export function PromoBanner() {
       <Banner
         show={show}
         onHide={() => setShow(false)}
-        icon={<Image src="/images/icon.png" alt="Reel Rep" width={40} height={40} className="h-20 w-20 object-contain" />}
+        icon={<Image src="/images/djvnk.png" alt="Reel Rep" width={40} height={40} className="h-20 w-20 object-contain" />}
         title={
           <span dir="rtl">
             <span className="font-semibold">הרשמה מוקדמת לאפליקציה כבר כאן!</span>

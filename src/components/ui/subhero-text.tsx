@@ -5,18 +5,23 @@ import { cn } from "@/lib/utils";
 
 interface SubHeroTextProps {
     className?: string;
+    align?: "center" | "end";
 }
 
-export function SubHeroText({ className }: SubHeroTextProps) {
+export function SubHeroText({ className, align = "center" }: SubHeroTextProps) {
     // Default text color is gray-900 unless overridden
     const textColorClass = className?.includes('text-') ? '' : 'text-gray-900';
+
+    const textAlign = align === "end" ? "text-center md:text-right" : "text-center";
+    const flexJustify = align === "end" ? "justify-center md:justify-end" : "justify-center";
+    const containerMargin = align === "end" ? "mx-auto md:mx-0" : "mx-auto";
 
     return (
         <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className={cn("mt-12 md:mt-16 max-w-4xl mx-auto relative z-50 text-center px-4", className)}
+            className={cn(`mt-12 md:mt-16 max-w-4xl ${containerMargin} relative z-50 ${textAlign} px-4`, className)}
             dir="rtl"
         >
             <h3 className={cn("text-2xl md:text-4xl font-black leading-tight mb-0 md:mb-1 drop-shadow-sm", textColorClass)}>
@@ -25,7 +30,7 @@ export function SubHeroText({ className }: SubHeroTextProps) {
                     שליטה מלאה.
                 </span>
             </h3>
-            <div className={cn("text-2xl md:text-4xl font-black drop-shadow-sm flex flex-row flex-wrap justify-center gap-2 md:gap-3", textColorClass)}>
+            <div className={cn(`text-2xl md:text-4xl font-black drop-shadow-sm flex flex-row flex-wrap ${flexJustify} gap-2 md:gap-3`, textColorClass)}>
                 <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

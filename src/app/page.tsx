@@ -3,7 +3,7 @@ import { Highlight } from "@/components/ui/hero-highlight";
 import GradientMacroCards from "@/components/ui/gradient-card-showcase";
 import { ScreenshotCarousel } from "@/components/ui/screenshot-carousel";
 import { PricingCards } from "@/components/ui/pricing-cards";
-import { ScrollPinContainer } from "@/components/ui/scroll-3d-pin";
+import { HeroPhoneMockup } from "@/components/ui/hero-phone-mockup";
 import { Meteors } from "@/components/ui/meteors";
 import { AppStoreButton } from "@/components/ui/app-store-button";
 import { PlayStoreButton } from "@/components/ui/play-store-button";
@@ -99,39 +99,23 @@ function HeroSection() {
   return (
     <AuroraBackground className="!h-auto min-h-[130vh] pb-20 relative z-30 rounded-b-[40px] overflow-hidden">
       <div className="relative z-10 flex flex-col items-center justify-start text-center px-6 w-full pt-[5vh]">
-        <Image
-          src="/images/logo-reelrep-plus-black.png"
-          alt="Reel Rep Plus"
-          width={1200}
-          height={300}
-          className="w-[280px] md:w-full md:max-w-4xl h-auto mb-2 md:mt-[25vh]"
-        />
-        <Image
-          src="/images/byreelrep-black.png"
-          alt="by Reel Rep"
-          width={200}
-          height={40}
-          className="h-auto w-[100px] md:w-[150px] mb-6"
-        />
-        {/* Phone mockup with scroll animation */}
-        <ScrollPinContainer containerClassName="mt-8 relative z-30">
-          <div className="relative">
-            {/* Phone frame */}
-            <div className="relative w-[280px] h-[560px] md:w-[320px] md:h-[640px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl shadow-black/50">
-              {/* Screen with actual app screenshot */}
-              <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                <video
-                  src="/images/hero-video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover object-bottom scale-105"
-                />
-              </div>
-            </div>
-          </div>
-        </ScrollPinContainer>
+        <div className="relative w-[280px] md:w-full md:max-w-4xl mb-6 md:mt-[25vh]">
+          <Image
+            src="/images/plusnew-black.png"
+            alt="Reel Rep Plus"
+            width={1200}
+            height={300}
+            className="w-full h-auto"
+          />
+          <Image
+            src="/images/reel-rep-fitness-handle.png"
+            alt="by Reel Rep"
+            width={200}
+            height={40}
+            className="absolute left-0 bottom-0 translate-y-full mt-2 h-auto w-[200px] md:w-[320px]"
+          />
+        </div>
+        <HeroPhoneMockup />
 
       </div>
     </AuroraBackground >
@@ -148,28 +132,29 @@ function AppDownloadSection() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-900/30 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
       </div>
 
-      <SubHeroText className="text-white mt-0 md:mt-0 relative z-10" />
-
-      {/* App Icon */}
-      <div className="mt-8 relative z-50 flex flex-col items-center">
-        {/* Divider - White/Gray on black */}
-        <div className="w-16 h-1 bg-zinc-700 rounded-full mb-8" />
-
-        <div className="relative shine-effect rounded-[22%]">
-          <Image
-            src="/images/icon.png"
-            alt="Reel Rep Icon"
-            width={128}
-            height={128}
-            className="w-28 h-28 md:w-32 md:h-32 object-contain drop-shadow-lg relative z-10"
-          />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16" dir="rtl">
+        {/* Right column (first in RTL): app icon + store buttons */}
+        <div className="flex flex-col items-center gap-8 shrink-0">
+          <div className="relative shine-effect rounded-[22%]">
+            <Image
+              src="/images/djvnk.png"
+              alt="Reel Rep Icon"
+              width={128}
+              height={128}
+              className="w-28 h-28 md:w-32 md:h-32 object-contain drop-shadow-lg relative z-10"
+            />
+          </div>
+          <div className="flex flex-row gap-4 items-center justify-center">
+            <AppStoreButton className="bg-white text-black hover:bg-gray-200 border-none" />
+            <PlayStoreButton className="bg-white text-black hover:bg-gray-200 border-none" />
+          </div>
         </div>
-      </div>
 
-      {/* Store Buttons */}
-      <div className="flex flex-row gap-4 mt-8 md:mt-12 relative z-50 items-center justify-center">
-        <AppStoreButton className="bg-white text-black hover:bg-gray-200 border-none" />
-        <PlayStoreButton className="bg-white text-black hover:bg-gray-200 border-none" />
+        {/* Left column (second in RTL): the headline text */}
+        <SubHeroText
+          align="center"
+          className="text-white mt-0 md:mt-0 relative z-10 md:flex-1 md:max-w-2xl"
+        />
       </div>
     </section>
   );

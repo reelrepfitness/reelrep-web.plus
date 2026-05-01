@@ -35,14 +35,10 @@ export const AuroraBackground = ({
             dark:[background-image:var(--dark-gradient),var(--aurora)]
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
-            filter blur-[10px] invert dark:invert-0
-            after:content-[""] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] 
-            after:dark:[background-image:var(--dark-gradient),var(--aurora)]
-            after:[background-size:200%,_100%] 
-            after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
+            filter blur-[10px]
             pointer-events-none
-            absolute -inset-[10px] opacity-50 will-change-transform
-            animate-aurora`,
+            absolute -top-[10px] -bottom-[10px] -left-[10px] w-[140%] opacity-50
+            animate-aurora motion-reduce:animate-none`,
 
                             showRadialGradient &&
                             `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`,
